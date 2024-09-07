@@ -1,0 +1,93 @@
+void main() {
+  
+  // Q.1) Create a list of names and print all names
+  List<String> names = ['Alice', 'Bob', 'Charlie', 'Diana'];
+  print('Q.1) Names:');
+  names.forEach(print);
+  
+  // Q.2) Create a list of Days and print only Sunday
+  List<String> days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  print('\nQ.2) Day of the week:');
+  print(days.last); // Sunday is at the last index
+  
+  // Q.3) Create a list of name, class, roll no, grade, percentage and print
+  List<dynamic> studentInfo = ['Alice', '10th Grade', 'A123', 'A', 89.5];
+  print('\nQ.3) Student Information:');
+  print('Name: ${studentInfo[0]}');
+  print('Class: ${studentInfo[1]}');
+  print('Roll No: ${studentInfo[2]}');
+  print('Grade: ${studentInfo[3]}');
+  print('Percentage: ${studentInfo[4]}%');
+  
+  // Q.4) Create a list of numbers & get the smallest & greatest number from a list
+  List<int> numbers = [12, 45, 67, 23, 89, 34];
+  int smallest = numbers.reduce((a, b) => a < b ? a : b);
+  int greatest = numbers.reduce((a, b) => a > b ? a : b);
+  print('\nQ.4) Smallest and Greatest Number:');
+  print('Smallest number: $smallest');
+  print('Greatest number: $greatest');
+  
+  // Q.5) Given a list of integers, return the maximum value
+  int findMaxValue(List<int> nums) {
+    return nums.reduce((a, b) => a > b ? a : b);
+  }
+  List<int> intList = [3, 5, 7, 2, 8, 9];
+  print('\nQ.5) Maximum value:');
+  print(findMaxValue(intList));
+  
+  // Q.6) Print a new list with the elements in reverse order
+  List<String> originalList = ['apple', 'banana', 'cherry'];
+  List<String> reversedList = List<String>.from(originalList.reversed);
+  print('\nQ.6) Reversed List:');
+  print(reversedList);
+  
+  // Q.7) Use the where() method to filter out negative numbers from a list
+  List<int> filterPositiveNumbers(List<int> nums) {
+    return nums.where((num) => num > 0).toList();
+  }
+  List<int> mixedNumbers = [-5, 3, -1, 8, -7, 4];
+  print('\nQ.7) Positive Numbers:');
+  print(filterPositiveNumbers(mixedNumbers));
+  
+  // Q.8) Remove all non-'eligible' values from the list
+  List<String> usersEligibility = ['John', 'Alice', 'eligible', 'Mike', 'Sarah', 'Tom'];
+  usersEligibility.removeWhere((element) => element != 'eligible');
+  print('\nQ.8) Updated User Eligibility List:');
+  print(usersEligibility);
+  
+  
+}
+
+
+
+Q.1) Names:
+Alice
+Bob
+Charlie
+Diana
+
+Q.2) Day of the week:
+Sunday
+
+Q.3) Student Information:
+Name: Alice
+Class: 10th Grade
+Roll No: A123
+Grade: A
+Percentage: 89.5%
+
+Q.4) Smallest and Greatest Number:
+Smallest number: 12
+Greatest number: 89
+
+Q.5) Maximum value:
+9
+
+Q.6) Reversed List:
+[cherry, banana, apple]
+
+Q.7) Positive Numbers:
+[3, 8, 4]
+
+Q.8) Updated User Eligibility List:
+[eligible]
